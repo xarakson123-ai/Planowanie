@@ -9,19 +9,22 @@
 <body>
   <main class="app">
     <section id="lobby" class="panel">
-      <h1>Planowanie Online</h1>
-      <p class="subtitle">Gra karciana dla 2–4 graczy</p>
+      <h1>♠ Planowanie Online ♥</h1>
+      <p class="subtitle">Karciana gra strategiczna dla 2–4 graczy</p>
 
       <label for="playerName">Twój nick</label>
       <input id="playerName" maxlength="20" placeholder="Wpisz nick" autocomplete="off" />
 
+      <label for="roomName">Nazwa pokoju</label>
+      <input id="roomName" maxlength="24" placeholder="Np. Pokerowa Noc" autocomplete="off" />
+
       <div class="actions">
-        <button id="createRoomButton">Utwórz pokój</button>
+        <button id="createRoomButton">♣ Utwórz pokój</button>
       </div>
 
       <div class="join-row">
         <input id="roomCode" maxlength="5" placeholder="KOD POKOJU" autocomplete="off" />
-        <button id="joinRoomButton">Dołącz</button>
+        <button id="joinRoomButton">♦ Dołącz</button>
       </div>
 
       <p id="message" class="message"></p>
@@ -30,18 +33,16 @@
     <section id="room" class="panel hidden">
       <div class="room-header">
         <div>
-          <h2>Pokój <span id="roomCodeLabel">-----</span></h2>
+          <h2>Pokój <span id="roomNameLabel">Bez nazwy</span></h2>
+          <p>Kod: <b id="roomCodeLabel">-----</b></p>
           <p id="phaseLabel">Oczekiwanie na graczy</p>
         </div>
         <button id="copyRoomButton" class="secondary">Kopiuj kod</button>
       </div>
-
       <div id="players" class="players"></div>
-
       <button id="startGameButton" class="start hidden">Rozpocznij grę</button>
     </section>
   </main>
-
   <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
   <script src="app.js"></script>
 </body>
