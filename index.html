@@ -8,37 +8,54 @@
 </head>
 <body>
   <main class="app">
-    <section id="lobby" class="panel">
+    <section id="mainMenu" class="main-menu">
+      <div class="menu-glow"></div>
+      <div class="menu-logo">♠ <span>PLANOWANIE</span> ♥</div>
+      <p class="menu-subtitle">ONLINE CARD TABLE</p>
+      <div class="menu-card">
+        <label for="playerName">Twój nick</label>
+        <input id="playerName" maxlength="20" placeholder="Wpisz nick" autocomplete="off" />
+        <label for="roomName">Nazwa pokoju</label>
+        <input id="roomName" maxlength="24" placeholder="Np. Pokerowa Noc" autocomplete="off" />
+        <div class="menu-buttons">
+          <button id="createRoomButton" class="primary-menu-btn">♣ UTWÓRZ POKÓJ</button>
+          <div class="menu-divider"><span>LUB</span></div>
+          <div class="join-row">
+            <input id="roomCode" maxlength="5" placeholder="KOD POKOJU" autocomplete="off" />
+            <button id="joinRoomButton">♦ DOŁĄCZ</button>
+          </div>
+          <button id="settingsButton" class="settings-btn">⚙ Ustawienia</button>
+        </div>
+        <p id="message" class="message"></p>
+      </div>
+      <div class="future-box"><b>✦ Więcej już wkrótce</b><span>Statystyki · profile · motywy · osiągnięcia</span></div>
+      <small class="menu-footer">Planowanie Online · 2–4 graczy</small>
+    </section>
+
+    <section id="settingsPanel" class="main-menu hidden">
+      <div class="menu-card settings-card">
+        <button id="backToMenuButton" class="secondary">← Powrót</button>
+        <div class="settings-title">⚙ USTAWIENIA</div>
+        <div class="setting-row"><div><b>Sortowanie kart</b><small>Wybierz domyślny sposób układania kart.</small></div><select id="menuSort"><option value="suit">♥♦♣♠ Kolory</option><option value="rank">2–A Liczby</option></select></div>
+        <div class="setting-row"><div><b>Animacje</b><small>Efekty interfejsu podczas gry.</small></div><button id="animationsToggle" class="toggle">WŁĄCZONE</button></div>
+        <div class="future-settings">🔒 Kolejne ustawienia pojawią się tutaj w przyszłości.</div>
+      </div>
+    </section>
+
+    <section id="lobby" class="panel hidden">
       <h1>♠ Planowanie Online ♥</h1>
       <p class="subtitle">Karciana gra strategiczna dla 2–4 graczy</p>
-
-      <label for="playerName">Twój nick</label>
-      <input id="playerName" maxlength="20" placeholder="Wpisz nick" autocomplete="off" />
-
-      <label for="roomName">Nazwa pokoju</label>
-      <input id="roomName" maxlength="24" placeholder="Np. Pokerowa Noc" autocomplete="off" />
-
-      <div class="actions">
-        <button id="createRoomButton">♣ Utwórz pokój</button>
-      </div>
-
-      <div class="join-row">
-        <input id="roomCode" maxlength="5" placeholder="KOD POKOJU" autocomplete="off" />
-        <button id="joinRoomButton">♦ Dołącz</button>
-      </div>
-
-      <p id="message" class="message"></p>
+      <label for="playerNameLobby">Twój nick</label>
+      <input id="playerNameLobby" maxlength="20" placeholder="Wpisz nick" autocomplete="off" />
+      <label for="roomNameLobby">Nazwa pokoju</label>
+      <input id="roomNameLobby" maxlength="24" placeholder="Np. Pokerowa Noc" autocomplete="off" />
+      <div class="actions"><button id="createRoomButtonLobby">♣ Utwórz pokój</button></div>
+      <div class="join-row"><input id="roomCodeLobby" maxlength="5" placeholder="KOD POKOJU" autocomplete="off" /><button id="joinRoomButtonLobby">♦ Dołącz</button></div>
+      <p id="messageLobby" class="message"></p>
     </section>
 
     <section id="room" class="panel hidden">
-      <div class="room-header">
-        <div>
-          <h2>Pokój <span id="roomNameLabel">Bez nazwy</span></h2>
-          <p>Kod: <b id="roomCodeLabel">-----</b></p>
-          <p id="phaseLabel">Oczekiwanie na graczy</p>
-        </div>
-        <button id="copyRoomButton" class="secondary">Kopiuj kod</button>
-      </div>
+      <div class="room-header"><div><h2>Pokój <span id="roomNameLabel">Bez nazwy</span></h2><p>Kod: <b id="roomCodeLabel">-----</b></p><p id="phaseLabel">Oczekiwanie na graczy</p></div><button id="copyRoomButton" class="secondary">Kopiuj kod</button></div>
       <div id="players" class="players"></div>
       <button id="startGameButton" class="start hidden">Rozpocznij grę</button>
     </section>
