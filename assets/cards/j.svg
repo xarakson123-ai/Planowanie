@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260">
+<rect width="200" height="260" rx="12" fill="#f7f7f2"/>
+<rect x="8" y="8" width="184" height="244" rx="9" fill="none" stroke="#c7a64a" stroke-width="4"/>
+<circle cx="100" cy="72" r="28" fill="#f1c7a5" stroke="#222" stroke-width="4"/>
+<path d="M72 70Q100 28 128 70L120 53Q100 38 80 53Z" fill="#1d315b"/>
+<path d="M61 225L72 105Q100 90 128 105L139 225Z" fill="#183d75" stroke="#222" stroke-width="4"/>
+<path d="M72 115L100 145L128 115" fill="#d8b04a"/>
+<path d="M82 226L92 151L100 170L108 151L118 226" fill="#b42f35"/>
+<text x="100" y="246" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700">J</text>
+</svg>
